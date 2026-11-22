@@ -162,7 +162,7 @@ export default function Home() {
           <div className="mx-auto max-w-[1500px] px-5 py-8 md:px-9 md:py-10">
             <div className="flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
               <div>
-                <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[.15em] text-[#8c9891]"><span className="h-1.5 w-1.5 rounded-full bg-[#4d9b73]"/> Monday, November 23, 2026</div>
+                <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[.15em] text-[#8c9891]"><span className="h-1.5 w-1.5 rounded-full bg-[#4d9b73]"/> {new Intl.DateTimeFormat("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" }).format(new Date())}</div>
                 <h1 className="mt-3 text-[28px] font-bold tracking-[-.04em] text-[#19241f] md:text-[34px]">Good morning, Kamlesh <span className="inline-block origin-bottom-right animate-pulse">✳</span></h1>
                 <p className="mt-2 text-sm text-[#87918b]">Here’s what’s happening across your workspace today.</p>
               </div>
