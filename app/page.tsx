@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import type { FormEvent } from "react";
 import {
   Activity, ArrowDownRight, ArrowUpRight, Bell, CalendarDays, Check,
   ChevronDown, ChevronRight, CircleHelp, Clock3, Command, Filter,
@@ -70,7 +71,7 @@ export default function Home() {
   const done = tasks.filter(task => task.status === "Done").length;
   const progress = tasks.length ? Math.round(done / tasks.length * 100) : 0;
 
-  function addTask(event: React.FormEvent<HTMLFormElement>) {
+  function addTask(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!newTitle.trim()) return;
     const person = members.find(member => member.name === newOwner) ?? members[0];
