@@ -6,7 +6,7 @@ DevTrack is a project and team collaboration platform built as a portfolio proje
 
 ## Demo links
 
-- **Streamlit demo:** Not deployed yet. [Deploy DevTrack on Streamlit Community Cloud](https://share.streamlit.io) using the settings below.
+- **Streamlit demo: https://devtrack-zkmocpqzvbcifuju3ktgwt.streamlit.app/
 - **GitHub repository:** https://github.com/Kamleshkumarmandal/DevTrack
 
 After Streamlit creates the public app, add the generated `https://....streamlit.app` address here. The public demo URL cannot be known until the app is deployed.
