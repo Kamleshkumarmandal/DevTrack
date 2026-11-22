@@ -3,8 +3,8 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "DevTrack — Work, clearly in motion",
-  description: "A calm, focused workspace for projects, teams, and tasks."
+  title: "DevTrack — Project Management & Team Collaboration Platform",
+  description: "A focused workspace to plan projects, coordinate teams, manage tasks and move delivery forward."
 };
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
