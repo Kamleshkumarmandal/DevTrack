@@ -1,30 +1,76 @@
-# DevTrack
+# DevTrack — Project Management & Team Collaboration Platform
 
-**A calm, modern workspace for teams to plan projects and move work forward.**
+**A focused workspace to plan projects, coordinate teams, manage tasks and move delivery forward.**
 
-DevTrack is a portfolio project management app built with Next.js, React, TypeScript, Tailwind CSS, and Lucide icons.
+DevTrack is a project and team collaboration platform built as a portfolio project. It gives a small product team one place to see project health, organize work on a Kanban board, assign ownership, track priorities and understand what has been completed.
 
-## Features in this starter
+## Demo links
 
-- Workspace dashboard with task totals and completion progress
-- Project overview for Website redesign and Mobile app
-- Kanban board with Todo, In progress, In review, and Done stages
-- Create tasks with a project, priority, due date, and assignee
-- Move tasks between stages from each task card
-- Search tasks and filter by project
-- Responsive sidebar and dashboard layout
-- Demo data works without any external credentials
+- **Streamlit demo:** Not deployed yet. [Deploy DevTrack on Streamlit Community Cloud](https://share.streamlit.io) using the settings below.
+- **GitHub repository:** https://github.com/Kamleshkumarmandal/DevTrack
 
-> Current data is held in React state for demonstration. Refreshing the page restores sample tasks. Supabase authentication and persistent database storage are planned for the next phase.
+After Streamlit creates the public app, add the generated `https://....streamlit.app` address here. The public demo URL cannot be known until the app is deployed.
 
-## Getting started
+### Streamlit Cloud deployment
 
-### Requirements
+1. Sign in to [Streamlit Community Cloud](https://share.streamlit.io) with GitHub.
+2. Choose **Create app** and select an existing repository.
+3. Repository: `Kamleshkumarmandal/DevTrack`.
+4. Branch: `main`.
+5. Main file path: `streamlit_app.py`.
+6. Click **Deploy** and wait for the app to finish building.
+7. Copy the generated public URL into the **Streamlit demo** link above.
 
-- Node.js 20 or later
-- npm
+## What DevTrack does
 
-### Run locally
+DevTrack supports a practical team workflow from planning through delivery:
+
+- **Workspace overview:** Task totals, completion rate, work in progress and items awaiting review.
+- **Project tracking:** Separate Website Redesign and Mobile App workstreams, each with owners and progress indicators.
+- **Kanban workflow:** Move tasks through Todo, In progress, In review and Done.
+- **Task ownership:** Assign every task to a teammate and make responsibility visible.
+- **Priority and due dates:** Highlight urgent work and keep upcoming deadlines in view.
+- **Task discovery:** Search by task, project or teammate; filter by project, status, priority and owner.
+- **Team workload:** Compare assigned and completed tasks by teammate.
+- **Reporting:** Export the current task list as a CSV file.
+
+## Two ways to explore the project
+
+### Streamlit demo
+
+The Streamlit edition is a Python dashboard designed for quick portfolio exploration. It reuses the shared task records and validation/analytics helpers from `devtrack_engine.py`. It includes the overview, Kanban board, project and team pages, task creation, task status updates and CSV export.
+
+The Streamlit version stores changes in session state. They are sample workspace changes and reset when the session restarts. It is not connected to an authenticated multi-user database.
+
+### Next.js application
+
+The original Next.js application remains in the repository and is unchanged by the addition of Streamlit. It provides the interactive React workspace UI.
+
+## Run the Streamlit demo locally
+
+Use Python 3.12 or newer.
+
+Windows PowerShell:
+
+```powershell
+py -3.12 -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
+macOS / Linux:
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
+## Run the Next.js application locally
+
+Requirements: Node.js 20 or newer and npm.
 
 ```bash
 git clone https://github.com/Kamleshkumarmandal/DevTrack.git
@@ -33,45 +79,34 @@ npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+Open http://localhost:3000.
 
-### Environment setup
+## Technology
 
-Copy `.env.example` to `.env.local` when preparing for the Supabase phase.
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
-```
-
-The current demo does not require Supabase credentials. Never commit service-role keys, passwords, or other secrets.
-
-## Scripts
-
-| Command | Description |
+| Area | Technology |
 | --- | --- |
-| `npm run dev` | Start the development server |
-| `npm run build` | Create a production build |
-| `npm run start` | Run the production build |
-| `npm run lint` | Run ESLint through Next.js |
+| Web application | Next.js, React, TypeScript |
+| Styling | Tailwind CSS |
+| Python demo | Streamlit, Pandas |
+| Shared domain logic | Python task filtering, validation and summaries |
+| Quality checks | Python unittest, Streamlit AppTest, GitHub Actions |
 
-## Tech stack
+## Data and security notes
 
-- Next.js 14 App Router
-- React 18
-- TypeScript
-- Tailwind CSS
-- Lucide React icons
+The current demo uses illustrative team members, projects and tasks. The Next.js UI stores demo changes in React state; the Streamlit UI stores them in session state. Neither app currently persists changes to Supabase. A starter Supabase environment template exists for future development.
+
+Never commit passwords, access tokens, service-role keys or other secrets.
 
 ## Roadmap
 
-- [ ] Supabase authentication
-- [ ] PostgreSQL schema and row-level security
-- [ ] Persistent projects and tasks
+- [ ] Supabase authentication and persistent PostgreSQL storage
 - [ ] Team invitations and role-based permissions
-- [ ] Activity feed and richer analytics
-- [ ] Automated tests and CI workflow
+- [ ] Persistent projects, tasks and task activity history
+- [ ] Comments, file attachments and notifications
+- [ ] Calendar and sprint planning views
+- [ ] Audit log and richer project analytics
+- [ ] Integration and end-to-end tests
 
 ## License
 
-MIT
+MIT. See [LICENSE](LICENSE).
